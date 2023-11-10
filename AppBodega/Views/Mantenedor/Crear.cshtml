@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4>Reserva tu hora</h4>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Crear", "Mantenedor")" method="post">
+            <div class="form-group">
+                <label>RUT (Sin puntos ni guion)</label>
+                <input class="form-control" type="text" name="RUT" />
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input class="form-control" type="text" name="Nombre" />
+            </div>
+            <div class="form-group">
+                <label>Apellido</label>
+                <input class="form-control" type="text" name="Apellido" />
+            </div>
+            <div class="form-group">
+                <label>FechadeNacimiento</label>
+                <input class="form-control" type="date" name="FechadeNacimiento" />
+            </div>
+            <div class="form-group">
+                <label>Medico Tratante</label>
+                <input class="form-control" type="text" name="MedicoTratante" />
+            </div>
+            <div class="form-group">
+                <label>Fecha de atencion</label>
+                <input class="form-control" type="date" name="Fechahora" />
+            </div>
+            <hr />
+            <button type="submit" class="btn btn-primary">Agendar</button>
+            <a class="btn btn-danger" href="@Url.Action("RegistroExitoso", "Mantenedor")"></a>
+        </form>
+    </div>
+
+</div>

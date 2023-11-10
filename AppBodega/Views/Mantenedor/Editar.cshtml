@@ -1,0 +1,49 @@
+﻿@model AppBodega.Models.Item
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4>Editar Paciente</h4>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Editar", "Mantenedor")" method="post">
+            <input type="hidden" name="Id" value="@Html.DisplayTextFor(m => m.Id)" />
+            <div class="form-group">
+                <label>RUT</label>
+                <input class="form-control" type="text" name="SKU" value="@Html.DisplayTextFor(m => m.RUT)" />
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input class="form-control" type="text" name="cantidad" value="@Html.DisplayTextFor(m => m.Nombre)" />
+            </div>
+            <div class="form-group">
+                <label>Apellido</label>
+                <input class="form-control" type="text" name="nombre" value="@Html.DisplayTextFor(m => m.Apellido)" />
+            </div>
+            <div class="form-group">
+                <label>Fechade de nacimiento</label>
+                <input class="form-control" type="date" name="nombre" value="@Html.DisplayTextFor(m => m.FechadeNacimiento)" />
+            </div>
+            <div class="form-group">
+                <label>Medico tratante</label>
+                <input class="form-control" type="text" name="nombre" value="@Html.DisplayTextFor(m => m.MedicoTratante)" />
+            </div>
+            <div class="form-group">
+                <label>Hora de atencion</label>
+                <input class="form-control" type="date" name="nombre" value="@Html.DisplayTextFor(m => m.Fechahora)" />
+            </div>
+            <hr />
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a class="btn btn-danger" href="@Url.Action("Inicio", "Mantenedor")">Volver</a>
+            <a></a>
+        </form>
+    </div>
+
+</div>
+
+

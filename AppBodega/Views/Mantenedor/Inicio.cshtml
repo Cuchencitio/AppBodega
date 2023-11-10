@@ -1,0 +1,48 @@
+﻿@model IEnumerable<AppBodega.Models.Item>
+
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4>Lista de Horas reservadas</h4>
+    </div>
+    <div class="panel-body">
+        <a class="btn btn-success" href="@Url.Action("Crear","Mantenedor")">Agregar Paciente</a>
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>RUT</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Medico Tratante</th>
+                    <th>Fechade atencion</th>
+                    <th style="width:150px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.RUT</td>
+                    <td>@item.Nombre</td>
+                    <td>@item.Apellido</td>
+                    <td>@item.FechadeNacimiento</td>
+                    <td>@item.MedicoTratante</td>
+                    <td>@item.Fechahora</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="@Url.Action("Editar", "Mantenedor", new {idItem = item.Id})">Editar</a>
+                        <a class="btn btn-primary btn-sm" href="@Url.Action("Eliminar", "Mantenedor", new {idItem = item.Id})">Eliminar</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+
+</div>
